@@ -11,7 +11,7 @@
 
 <body>
     <div class="form-wrapper">
-        <form onsubmit="registerUser(event)">
+        <form id="form-register">
             <h1>Registrarme</h1>
             <hr>
             <input type="text" name="usuario" placeholder="Usuario" required>
@@ -23,7 +23,7 @@
             <p>¿Ya tienes una cuenta? <a href="index.php">Inicia sesión</a></p>
         </form>
     </div>
-    <script src="assets/js/index.js"></script>
+    <script src="assets/js/register.js" type="module"></script>
 </body>
 
 </html>

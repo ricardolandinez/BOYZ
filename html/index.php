@@ -19,7 +19,7 @@ if (isset($_SESSION['user'])) {
 
 <body>
     <div class="form-wrapper">
-        <form onsubmit="makeLogin(event)">
+        <form id="form-login">
             <h1>Login</h1>
             <hr>
             <input type="text" name="usuario" placeholder="Usuario" required>
@@ -29,7 +29,7 @@ if (isset($_SESSION['user'])) {
             <p>¿No tienes una cuenta aún? <a href="register.php">Registrate</a></p>
         </form>
     </div>
-    <script src="assets/js/index.js"></script>
+    <script src="assets/js/login.js" type="module"></script>
 </body>
 
 </html>
