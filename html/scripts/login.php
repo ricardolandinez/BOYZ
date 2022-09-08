@@ -1,14 +1,12 @@
 <?php
-session_start();
 
 require "../resources/db/conexion.php";
+require "../resources/response.php";
 
 $json = array();
 
 if ($_SERVER["REQUEST_METHOD"] != 'POST') {
-    $json['error'] = 'Invalid request method';
-    echo json_encode($json);
-    exit;
+    sendResponse('Invalid request method', 400);
 }
 
 $content = file_get_contents('php://input');
@@ -20,18 +18,14 @@ $user = $result->fetch_assoc();
 
 
 if (!$user) {
-    $json['error'] = 'User not found!';
-    echo json_encode($json);
-    exit;
+    sendResponse('User not found!', 400);
 }
 
-if ($data['clave'] !== $user['clave']) {
-    $json['error'] = 'Invalid password!';
-    echo json_encode($json);
-    exit;
+if (password_verify($user['clave'], $data['clave'])) {
+    sendResponse('Invalid password!', 400);
 }
+
+session_start();
 $_SESSION['user'] = $user;
-$json['user'] = $user;
-session_write_close();
 
-echo json_encode($json);
+sendResponse($user, 200);

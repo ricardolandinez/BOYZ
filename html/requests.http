@@ -1,4 +1,4 @@
-POST http://localhost/BOYZ/scripts/login.php
+POST http://localhost:8084/scripts/login.php
 Content-Type: application/json
     
 {
