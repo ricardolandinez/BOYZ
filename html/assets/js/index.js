@@ -3,7 +3,7 @@ function makeLogin(e) {
 
   const { usuario, clave } = e.target;
 
-  fetch("http://localhost/BOYZ/scripts/login.php", {
+  fetch("../../scripts/login.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -13,7 +13,7 @@ function makeLogin(e) {
       clave: clave.value,
     }),
   })
-    .then(() => (location.href = "http://localhost/BOYZ/home.php"))
+    .then(() => (location.href = "../../home.php"))
     .catch((err) => {
       console.error(err);
     });
