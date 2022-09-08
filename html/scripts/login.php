@@ -21,7 +21,7 @@ if (!$user) {
     sendResponse('User not found!', 400);
 }
 
-if (password_verify($user['clave'], $data['clave'])) {
+if (!password_verify($data['clave'], $user['clave'])) {
     sendResponse('Invalid password!', 400);
 }
 
