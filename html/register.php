@@ -1,11 +1,3 @@
-<?php
-session_start();
-if (isset($_SESSION['user'])) {
-    header('Location: home.php');
-    exit;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,20 +5,22 @@ if (isset($_SESSION['user'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Registrarme</title>
 </head>
 
 <body>
     <div class="form-wrapper">
-        <form onsubmit="makeLogin(event)">
-            <h1>Login</h1>
+        <form onsubmit="registerUser(event)">
+            <h1>Registrarme</h1>
             <hr>
             <input type="text" name="usuario" placeholder="Usuario" required>
+            <input type="text" name="nombre" placeholder="Nombre" required>
             <input type="password" name="clave" placeholder="Clave" required>
+            <input type="password" name="clave2" placeholder="Repetir Clave" required>
             <div class="spacer"></div>
-            <button>Ingresar</button>
-            <p>¿No tienes una cuenta aún? <a href="register.php">Registrate</a></p>
+            <button>Registrarme</button>
+            <p>¿Ya tienes una cuenta? <a href="index.php">Inicia sesión</a></p>
         </form>
     </div>
     <script src="assets/js/index.js"></script>
