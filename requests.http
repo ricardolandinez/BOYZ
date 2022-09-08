@@ -1,0 +1,7 @@
+POST http://localhost/BOYZ/scripts/login.php
+Content-Type: application/json
+    
+{
+    "usuario": "admin",
+    "clave": "admin123"
+}
