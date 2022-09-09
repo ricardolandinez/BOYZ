@@ -3,6 +3,10 @@
 require "../resources/db/conexion.php";
 require "../resources/response.php";
 
+if ($_SERVER["REQUEST_METHOD"] != 'POST') {
+    sendResponse('Invalid request method', 400);
+}
+
 $content = file_get_contents('php://input');
 $data = json_decode($content, true);
 

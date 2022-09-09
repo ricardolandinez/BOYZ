@@ -1,3 +1,4 @@
+import { redirect } from "./functions.js";
 import request from "./requests.js";
 
 const formLogin = document.querySelector("#form-login");
@@ -12,7 +13,7 @@ formLogin.addEventListener("submit", (e) => {
   })
     .then((res) => {
       console.log(res);
-      location.href = "../../home.php";
+      redirect("../../home.php");
     })
     .catch((err) => alert(err.error));
 });

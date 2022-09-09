@@ -1,3 +1,4 @@
+import { redirect } from "./functions.js";
 import request from "./requests.js";
 
 const formRegister = document.querySelector("#form-register");
@@ -15,7 +16,7 @@ formRegister.addEventListener("submit", (e) => {
   })
     .then((res) => {
       alert(res);
-      location.href = "../../index.php";
+      redirect("../../index.php");
     })
     .catch((err) => alert(err.error));
 });

@@ -10,14 +10,10 @@ const request = (url, method, data) => {
     })
       .then(async (res) => {
         const data = await res.json();
-        if (res.status !== 200) {
-          throw data;
-        }
+        if (res.status !== 200) throw data;
         resolve(data);
       })
-      .catch((err) => {
-        reject(err);
-      });
+      .catch((err) => reject(err));
   });
 };
 
