@@ -12,6 +12,7 @@ formRegister.addEventListener("submit", (e) => {
     usuario: usuario.value,
     clave: clave.value,
     nombre: nombre.value,
+    admin: 0
   })
     .then((res) => {
       alert(res);
